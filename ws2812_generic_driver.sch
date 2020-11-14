@@ -210,7 +210,7 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21662F.pdf" H 5800 5650 50 
 	1    0    0    -1  
 $EndComp
 Text GLabel 5100 5550 0    50   Input ~ 0
-+V
++5V
 Text GLabel 6300 5550 2    50   Input ~ 0
 +3.3V
 Text GLabel 6150 6150 3    50   Input ~ 0
@@ -248,7 +248,7 @@ Wire Wire Line
 Wire Wire Line
 	6200 5550 6300 5550
 Text GLabel 9500 1500 0    50   Input ~ 0
-+V
++5V
 Text GLabel 9500 2100 0    50   Input ~ 0
 GND
 Text GLabel 9500 1800 0    50   Input ~ 0
@@ -304,22 +304,22 @@ Text GLabel 9500 2700 0    50   Input ~ 0
 D2
 Text GLabel 9500 3000 0    50   Input ~ 0
 A1
-Text GLabel 2100 4400 0    50   Input ~ 0
+Text GLabel 8900 4250 2    50   Input ~ 0
 DOUT
 Wire Wire Line
-	2100 4400 2200 4400
-Text GLabel 2100 3800 0    50   Input ~ 0
+	8900 4250 8800 4250
+Text GLabel 2100 4200 0    50   Input ~ 0
 D1
-Text GLabel 2100 3700 0    50   Input ~ 0
+Text GLabel 2100 4100 0    50   Input ~ 0
 D2
 Text GLabel 2100 2100 0    50   Input ~ 0
 A1
 Wire Wire Line
 	2200 2100 2100 2100
 Wire Wire Line
-	2200 3700 2100 3700
+	2200 4100 2100 4100
 Wire Wire Line
-	2100 3800 2200 3800
+	2100 4200 2200 4200
 NoConn ~ 3600 2100
 NoConn ~ 3600 2200
 NoConn ~ 3600 2300
@@ -335,10 +335,8 @@ NoConn ~ 2200 2900
 NoConn ~ 2200 3000
 NoConn ~ 2200 3300
 NoConn ~ 2200 3400
-NoConn ~ 2200 3500
-NoConn ~ 2200 3600
-NoConn ~ 2200 4100
-NoConn ~ 2200 4200
+NoConn ~ 2200 3700
+NoConn ~ 2200 3800
 NoConn ~ 2200 4300
 $Comp
 L Device:C C2
@@ -352,11 +350,64 @@ F 3 "~" H 7500 2400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 7500 2150 1    50   Input ~ 0
-+V
++5V
 Wire Wire Line
 	7500 2150 7500 2250
 Text GLabel 7500 2650 3    50   Input ~ 0
 GND
 Wire Wire Line
 	7500 2650 7500 2550
+$Comp
+L MCU_Microchip_ATtiny:ATtiny10-TS U3
+U 1 1 5FAF4A70
+P 8200 4350
+F 0 "U3" H 7670 4396 50  0000 R CNN
+F 1 "ATtiny10-TS" H 7670 4305 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 8200 4350 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8127-AVR-8-bit-Microcontroller-ATtiny4-ATtiny5-ATtiny9-ATtiny10_Datasheet.pdf" H 8200 4350 50  0001 C CNN
+	1    8200 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 8200 3650 1    50   Input ~ 0
++5V
+Wire Wire Line
+	8200 3650 8200 3750
+Text GLabel 8200 5050 3    50   Input ~ 0
+GND
+Wire Wire Line
+	8200 5050 8200 4950
+$Comp
+L Device:R R4
+U 1 1 5FAF8F9F
+P 9050 4350
+F 0 "R4" H 9120 4396 50  0000 L CNN
+F 1 "10kR" H 9120 4305 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 8980 4350 50  0001 C CNN
+F 3 "~" H 9050 4350 50  0001 C CNN
+	1    9050 4350
+	0    1    1    0   
+$EndComp
+Text GLabel 9300 4350 2    50   Input ~ 0
++5V
+Wire Wire Line
+	9300 4350 9200 4350
+Wire Wire Line
+	8900 4350 8800 4350
+NoConn ~ 2200 4400
+Text GLabel 2100 3500 0    50   Input ~ 0
+MOSI
+Text GLabel 2100 3600 0    50   Input ~ 0
+SCK
+Wire Wire Line
+	2200 3500 2100 3500
+Wire Wire Line
+	2100 3600 2200 3600
+Text GLabel 8900 4150 2    50   Input ~ 0
+MOSI
+Text GLabel 8900 4050 2    50   Input ~ 0
+SCK
+Wire Wire Line
+	8800 4150 8900 4150
+Wire Wire Line
+	8900 4050 8800 4050
 $EndSCHEMATC
